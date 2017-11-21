@@ -1,0 +1,126 @@
+extends template-dashboard
+block estilos
+    link(rel="stylesheet", href="/css/dashboard/dashboard.css")
+
+block content
+
+    section.ui.segment
+        form#frm-crear-convocatoria.ui.form(action='#', method='post' enctype='multipart/form-data')
+            a.ui.ribbon.label
+                h2.light Crear Convocatoria
+            .two.fields
+                .field
+                    label Nombre
+                    input(type='text', name='nombre', placeholder='Nombre de la Convocatoria', required)
+                .field
+                    label Autor
+                    input(type='text', name='autor', value=`${primerNombre} ${apellidoPaterno}`,readonly="")
+            .field
+                label Descripcion
+                textarea(rows='2', name='descripcion', placeholder='Escriba aquí una descripción muy explicita de la convocatoria...', required)
+            .field
+                label Contacto
+                input(type='text', name='contacto', placeholder='Escriba una referencia sobre alguien que pueda proporcionar más información al respecto', required)
+            .three.fields
+                .field
+                    label Fecha de inicio
+                    input(type='date', name='inicio', required)
+                .field
+                    label Fecha de vencimiento
+                    input(type='date', name='final', required)
+                .field
+                    label Imagen Principal
+                    input(type='file', name='imagen', required, accept='image/x-png,image/jpeg')
+            .field
+                label Otras imágenes de la convocatoria
+                input#imagenes.multifile.custom-file-input(type='file', name='imagenes', multiple='multiple', accept='image/x-png,image/jpeg')
+                .upload-container
+            .field
+                label Archivos de la convocatoria
+                input#archivos.multifile.custom-file-input(type='file', name='archivos', multiple='multiple', accept='application/pdf')
+                .upload-files-container
+            .field
+                button.ui.basic.button(type='submit')
+                    i.add.to.calendar.icon
+                    | Crear Convocatoria
+    
+    section#lista-convocatorias.ui.segment
+        a.ui.ribbon.label
+            h2.light Lista de Convocatorias
+        #contenedor-convocatorias.ui.items
+            //- Template de avisos
+            script(id='template-convocatoria' type='text/x-handlebars-template')
+                .item(id='{{id}}')
+                    .ui.tiny.image
+                        img(src='/images/avisos/{{imagen}}')
+                    .middle.aligned.content
+                        .header {{titulo}} 
+                        .meta
+                            span.cinema {{inicio}} - {{final}}
+                        .description
+                            p
+                                | {{descripcion}}
+                        .extra
+                            .ui.right.floated.positive.button.editar-convocatoria(data-id-evento='{{id}}') Ver / Editar 
+                            .ui.right.floated.negative.button.eliminar-convocatoria(data-id-evento='{{id}}') Borrar
+        
+    #modal-eliminar-convocatoria.ui.basic.modal
+        .ui.icon.header
+            i.trash.outline.icon
+            |  ¿Está seguro que desea eliminar este evento?
+        .content.ui.center.aligned
+            p Si elimina el evento no podrá recuperar la información que éste mismo contiene.
+        .actions
+            .ui.red.basic.cancel.inverted.button
+                i.remove.icon
+                |  No
+            .ui.green.ok.inverted.button
+                i.checkmark.icon
+                |  Sí
+    
+    #modal-editar-convocatoria.ui.modal
+        .header Nombre del Evento
+        .scrolling.content
+            form.ui.form(action='#', method='post')
+                a.ui.ribbon.label
+                    h2.light Crear Convocatoria
+                .two.fields
+                    .field
+                        label Nombre
+                        input#nombre_convocatoria(type='text', name='nombre_convocatoria', placeholder='Nombre de la Convocatoria')
+                    .disabled.field
+                        label Autor
+                        input(type='text', name='autor_convocatoria', value=`${primer_nombre} ${apellido_paterno}`)
+                .field
+                    label Descripcion
+                    textarea#descripcion_convocatoria(rows='2', name='descripcion_convocatoria', placeholder='Escriba aquí una descripción muy explicita de la convocatoria...')
+                .field
+                    label Contacto
+                    input#contacto_convocatoria(type='text', name='contacto_convocatoria', placeholder='Escriba una referencia sobre alguien que pueda proporcionar más información al respecto')
+                .three.fields
+                    .field
+                        label Fecha de inicio
+                        input(type='date', name='inicio_convocatoria')
+                    .field
+                        label Fecha de vencimiento
+                        input(type='date', name='final_convocatoria')
+                    .field
+                        label Imagen Principal
+                        input(type='file', name='imagen_principal_convocatoria')
+                .field
+                    label Otras imágenes de la convocatoria
+                    input#imagenes.multifile.custom-file-input(type='file', name='imagenes', multiple='')
+
+                .field
+                    label Archivos de la convocatoria
+                    input#imagenes.multifile.custom-file-input(type='file', name='archivos', multiple='')
+
+        .actions
+            button#btn_actualizar_evento.ui.primary.button.disabled Actualizar
+            .ui.cancel.button Cerrar
+
+block scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js')
+    script(src='/js/handlebars.js')
+    script(src='/js/dashboard/gestionar_convocatorias.js')
+    

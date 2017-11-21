@@ -1,0 +1,54 @@
+extends template-dashboard
+block estilos
+    link(rel="stylesheet", href="/css/dashboard/gestionar_avisos.css")
+
+block content
+
+    section#avisos
+        div.upload-btn.ui.segment
+            form#frm-crear-aviso(action='#' class='ui form' method='POST' enctype='multipart/form-data')
+                h2(class='ui dividing header') Crear Evento
+                .field
+                    label Seleccione una imagen
+                    input#imagen-aviso(type='file' name='imagen_aviso' accept='image/x-png,image/jpeg' required)
+                .field
+                    label Fecha de caducidad del Anuncio
+                    input(type='date' name='caducidad' id='caducidad' required)
+                .field
+                    br
+                    button(class='fluid ui button' type='submit') Crear Aviso
+        #contenedor-avisos.ui.special.cards
+
+        //- Template de avisos
+        script(id='template-avisos' type='text/x-handlebars-template')
+             .card(id='{{id}}')
+                .blurring.dimmable.image
+                    .ui.dimmer.transition.hidden
+                        .content
+                            .center
+                                .ui.inverted.button.eliminar-evento(data-id='{{id}}') Eliminar Aviso
+                    img(src='{{imagen}}')
+                .content
+                    .meta
+                        span.date Creado el {{fecha}}
+
+        #eliminar-evento.ui.basic.modal
+            .ui.icon.header
+                i.archive.icon
+                |     ¿Eliminar Aviso?
+            .content
+                p
+                    | Si elimina este aviso, no podrá recueperarlo después.
+            .actions
+                .ui.red.basic.cancel.inverted.button
+                    i.remove.icon
+                    |       No
+                .ui.green.ok.approve.button
+                    i.checkmark.icon
+                    |       Yes
+
+
+block scripts
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js')
+    script(src='/js/handlebars.js')
+    script(src='/js/dashboard/gestionar_avisos.js')

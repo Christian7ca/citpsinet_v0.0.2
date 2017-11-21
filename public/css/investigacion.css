@@ -1,0 +1,32 @@
+.lineas-investigacion {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contenedor-lineas-investigacion {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenedor-lineas-investigacion .card .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-lineas-investigacion .card .content .header {
+    color: #343C5B !important;
+}
+
+.catalogo-investigadores {
+    background-color: #EEE;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contenedor-catalogo {
+    display: flex;
+    justify-content: center;
+}

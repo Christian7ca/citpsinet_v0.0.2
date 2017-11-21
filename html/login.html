@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/dist/semantic.min.css">
+    <link rel="stylesheet" href="public/css/login.css">
+</head>
+
+<body>
+
+    <main id="particles-js">
+        <div id="panel-signin" class="ui segment">
+            <form id="frm-signin" action="/login" method="POST" class="ui form">
+                <h1 class="ui dividing header light grey">Inicia Sesión</h1>
+                <div class="field">
+                    <label for="correo">Correo</label>
+                    <div class="ui right labeled input">
+                        <input id="correo" type="text" placeholder="nombre_apellido" name="correo" required="required" />
+                        <div class="ui dropdown label">
+                            <div id="dominio" class="text">@uaem.edu.mx</div><i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item">@uaem.mx</div>
+                                <div class="item">@gmail.com</div>
+                                <div class="item">@hotmail.com</div>
+                                <div class="item">@outlook.com</div>
+                                <div class="item">@yahoo.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="password" required="required">Contraseña</label>
+                    <div class="ui action input">
+                        <input id="pass" type="password" placeholder="Escriba su contraseña..." name="password" required="required" /><a id="view-pass" class="ui icon button"><i class="hide icon"></i></a>
+                    </div>
+                </div>
+                <div class="field"><br/>
+                    <button type="submit" class="ui primary button fluid">Iniciar Sesión</button>
+                </div>
+                <div class="field"><a href="#" class="item">¿Olvidó su contraseña?</a></div>
+            </form>
+        </div>
+
+    </main>
+
+    <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <script src='public/dist/semantic.min.js'></script>
+    <script src="public/js/particles.js"></script>
+    <script src='public/js/login.js'></script>
+</body>
+
+</html>

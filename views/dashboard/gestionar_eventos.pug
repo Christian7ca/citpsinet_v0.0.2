@@ -1,0 +1,106 @@
+extends template-dashboard
+block estilos
+	link(rel="stylesheet", href="/css/dashboard/dashboard.css")
+	link(rel="stylesheet", href="/css/iziToast.min.css")
+	
+block content
+	
+	section#crear-evento.ui.segment
+		form#frm-crear-evento.ui.form(action='#' method='post' enctype='multipart/form-data')
+			a.ui.ribbon.label
+				h2.light Crear Evento
+			.two.fields
+				.field
+					label Nombre
+					input(type='text', name='nombre_evento', placeholder='Nombre del Evento' required)
+				.field
+					label Autor
+					input(type='text', name='autor_evento', value=`${primerNombre} ${apellidoPaterno}`, read-only='')
+			.field
+				label Descripcion
+				textarea(rows='2', name='descripcion_evento', placeholder='Escriba aquí una descripción muy explicita del evento...' required)
+			.field
+				label Contacto
+				input(type='text', name='contacto_evento', placeholder='Escriba una referencia sobre alguien que pueda proporcionar más información al respecto' required)
+			.three.fields
+				.field
+					label Fecha de inicio
+					input(type='date', name='inicio_evento' required)
+				.field
+					label Fecha de vencimiento
+					input(type='date', name='final_evento' required)
+				.field
+					label Imagen Principal
+					input#imagenEvento(type='file', name='imagen' accept='image/x-png,image/jpeg' required)
+			.field
+				label Otras imágenes del evento
+				input.multifile.custom-file-input(type='file' name='imagenes' id='imagenes_evento' accept='image/x-png,image/jpeg' multiple='multiple')
+				.upload-container
+			.field
+				button.ui.basic.button(type='submit')
+					i.add.to.calendar.icon
+					| Crear Evento
+		
+	section#lista-eventos.ui.segment
+		a.ui.ribbon.label
+			h2.light Lista de Eventos
+		#contenedorEventos.ui.items
+			script(id='template-evento' type='text/x-handlebars-template')
+				.item(id='{{id}}')
+					.ui.tiny.image
+						img(src='{{urlImage}}')
+					.middle.aligned.content
+						.header {{title}}
+						.meta
+							span.cinema
+								| {{fechaInicio}} - {{fechaFinal}}
+						.description
+							p {{descripcion}}
+						.extra
+							.ui.right.floated.positive.button.btn-ver-evento(data-id-evento='{{id}}') Ver / Editar 
+							.ui.right.floated.negative.button.btn-borrar-evento(data-id-evento='{{id}}') Borrar
+	
+	#modal-ver-evento.ui.modal(data-id='')
+		.header Nombre del Evento
+		.scrolling.content
+			form#frm-actualizar-evento.ui.form(action='#')
+				h3.ui.dividing.header.light Actualizar Informacion del Evento
+				#editar_evento.ui.toggle.checkbox
+					input.hidden(type='checkbox', tabindex='0')
+					label Editar Informacion
+				.two.fields
+					.field
+						label Nombre
+						input#nombre_evento_update(type='text', name='nombre_evento',  readonly='')
+					.field
+						label Autor
+						input(type='text', name='autor_evento', value=`${primer_nombre} ${apellido_paterno}` readonly='')
+				.field
+					label Descripcion
+					textarea#descripcion_evento_update(rows='2', name='descripcion_evento' readonly='') Escriba aquí una descripción muy explicita del evento...
+				.field
+					label Contacto
+					input#contacto_evento_update(type='text', name='contacto_evento', value='Escriba una referencia sobre alguien que pueda proporcionar más información al respecto...' readonly='')
+				.three.fields
+					.field
+						label Fecha de inicio
+						input#inicio_evento_update(type='date', name='inicio_evento' readonly='')
+					.field
+						label Fecha de vencimiento
+						input#final_evento_update(type='date', name='final_evento' readonly='')
+					.field
+						label Reemplazar la imagen del Evento
+						input#imagenes_update(type='file', name='imagen' )
+				.field
+					label Agregar más imágenes al Evento
+					input#imagenes_evento_update.multifile.custom-file-input(type='file' name='imagenes' accept='image/x-png,image/jpeg' multiple='multiple')
+					.update_container
+		.actions
+			button#btn-actualizar-evento.ui.primary.button.approve.disabled Actualizar
+			.ui.cancel.button Cerrar
+
+block scripts
+	script(src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.min.js')
+	script(src='/js/iziToast.min.js')
+	script(src='/js/handlebars.js')
+	script(src='/js/dashboard/gestionar_eventos.js')

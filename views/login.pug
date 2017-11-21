@@ -1,0 +1,43 @@
+doctype html
+html(lang='es')
+	head
+		meta(charset='UTF-8')
+		title Inicie Sesión
+		link(rel='stylesheet', href='/dist/semantic.min.css')
+		link(rel='stylesheet', href='/css/login.css')
+		link(rel="stylesheet", href="/css/iziToast.min.css")
+	body
+		main#particles-js
+			#panel-signin.ui.segment
+				form#frm-signin.ui.form(action='/login', method='POST')
+					h1.ui.dividing.header.light.grey Inicia Sesión
+					.field
+						label(for='correo') Correo
+						.ui.right.labeled.input
+							input#correo(type='text', placeholder='nombre_apellido', name='correo', required='required')
+							.ui.dropdown.label
+								#dominio.text @uaem.edu.mx
+								i.dropdown.icon
+								.menu
+									.item @uaem.mx
+									.item @gmail.com
+									.item @hotmail.com
+									.item @outlook.com
+									.item @yahoo.com
+					.field
+						label(for='password', required='required') Contraseña
+						.ui.action.input
+							input#pass(type='password', placeholder='Escriba su contraseña...', name='password', required='required')
+							a#view-pass.ui.icon.button
+								i.hide.icon
+					.field
+						br
+						button.ui.primary.button.fluid(type='submit') Iniciar Sesión
+					.field
+						a.item(href='#') ¿Olvidó su contraseña?
+
+		script(src='https://code.jquery.com/jquery-3.1.1.min.js')
+		script(src='/dist/semantic.min.js')
+		script(src='/js/iziToast.min.js')
+		script(src='/js/particles.js')
+		script(src='/js/login.js')

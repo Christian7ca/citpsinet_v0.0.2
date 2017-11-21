@@ -1,0 +1,100 @@
+extends template-site
+
+block estilos
+    link(rel='stylesheet', href='/css/inicio.css')
+    link(rel='stylesheet', href='/css/slippry.css')
+    link(rel='stylesheet', href='/css/iziModal.min.css')
+
+block contenido
+
+    main.wrapper
+        .controles-slide
+            div
+                h2.ui.header.grey.raleway
+                    | Avisos, 
+                    br
+                    | Eventos & 
+                    br
+                    | Convocatorias.
+            .controles
+                a.sy-prev(href='#prev')
+                    i.big.angle.left.icon.grey
+                a.sy-next(href='#next')
+                    i.big.angle.right.icon.grey
+        .slider
+            ul#slides
+                li
+                    a(href='#slide1')
+                        img(src='/images/11.png', alt='citpsi')
+                li
+                    a(href='#slide2')
+                        img(src='/images/autismo.jpg', alt='citpsi')
+                li
+                    a(href='#slide3')
+                        img(src='/images/cognition.jpg', alt='citpsi')
+                li
+                    a(href='#slide4')
+                        img(src='/images/dreams.jpg', alt='citpsi')
+        .mas-info-inicio
+            h3.ui.center.aligned.header.raleway.blue
+                | ¿Deseas más información sobre algún evento, convocatoria o servicios ofertados en este Instituto?
+            button#btn-mas-info-inicio.fluid.ui.button.roboto.light Envianos un correo
+    
+    section.wrapper.acerca
+        h2.ui.center.blue.aligned.header
+            .content.raleway
+                | ¿Quienes somos?
+                .sub.header.roboto.light
+                    | Somos un centro de investigación en donde desarrollamos actividades de docencia, extensión y gestión en torno a los diversos aspectos de los fenómenos psicológicos en distintos contextos desde una perspectiva transdisciplinar y con un sentido de responsabilidad
+                    | social, contribuyendo con ello al mejoramiento de las condiciones de vida del ser humano.
+        .mision-vision-objetivos
+            .ui.segment.mision
+                h3.ui.center.grey.aligned.icon.header.raleway
+                    i.circular.rocket.icon
+                    |  Mision
+                h5.light.ui.header.centered.aligned
+                    | Desarrollar actividades de investigación, docencia, extensión y gestión en torno a los diversos aspectos de los fenómenos psicológicos en distintos contextos desde una perspectiva transdisciplinar y con un sentido de responsabilidad social,
+                    | contribuyendo con ello al mejoramiento de las condiciones de vida del ser humano.
+            .ui.segment.vision
+                h3.ui.center.grey.aligned.icon.header.raleway
+                    i.circular.unhide.icon
+                    |  Vision
+                h5.light.ui.header.centered.aligned
+                    | Ser la sede de referencia a nivel regional y una de las más importantes a nivel nacional, en el campo de la investigación y formación de investigadores en Psicología.
+            .ui.segment.objetivos
+                h3.ui.center.grey.aligned.icon.header.raleway
+                    i.circular.file.text.outline.icon
+                    |  Objetivos
+                h5.light.ui.header.centered.aligned
+                    | Realizar investigación interdisciplinar y transdisciplinar, tanto básica como aplicada, en los distintos temas que aborda la Psicología, generando conocimiento que aporte a una mejor comprensión sobre el ser humano y al continuo mejoramiento
+                    | de sus condiciones de vida.
+
+    // Modal structure
+    #modal
+        .ui.segment
+            .content-header
+                form.ui.form(action='#')
+                    .field
+                        label.ui.header.grey Nombre Completo
+                        input(type='text', name='nombre', placeholder='Escriba su correo electronico...', required='')
+                    .field
+                        label.ui.header.grey Correo Electronico
+                        input(type='text', name='correo', placeholder='Escriba su correo electronico...', required='')
+                    .field
+                        label.ui.header.grey Mensaje
+                        textarea(rows='2', name='mensaje', placeholder='Escriba un mensaje solicitando de manera especifica la informacion que requiere...', required='')
+                    .inline.field
+                        .ui.toggle.checkbox
+                            input.hidden(type='checkbox', tabindex='0')
+                            label.label-newsletter
+                                | ¿Desea suscribirse a nuestro Newsletter para recibir informacion cuando haya nuevos eventos?
+                    button.ui.primary.button.right.floated.loading(type='submit') Solicitar informacion
+                    button.ui.button.right.floated(type='reset') Cancelar
+                br
+                br
+
+
+block customScripts
+    script(src='/js/slippry.min.js')
+    script(src='/js/iziModal.min.js')
+    script(src='/js/inicio.js')

@@ -1,0 +1,36 @@
+extends template-site
+
+block estilos
+    link(rel='stylesheet', href='/css/evento.css')
+
+block contenido
+
+    section.wrapper.evento
+        .descripcion-evento
+            h1.ui.header.raleway.blue Nombre del Evento
+            h3.ui.header.raleway.light.blue
+                strong Gestiona:
+            h3.ui.header.raleway.light.blue
+                strong Fecha de publicacion:
+            h3.ui.header.raleway.light.blue
+                strong Feha del evento:
+            h3.ui.header.raleway.light.blue
+                strong Referencia para mayor informacion:
+            h3.ui.header.raleway.light.blue
+                strong Descripcion.
+            h5.ui.header.grey.roboto.light
+                strong
+                    | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat atque, non culpa tenetur aspernatur, cumque molestias, quo nesciunt voluptas quasi qui pariatur nihil beatae doloribus quis? Corporis voluptas quasi fuga. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos quam explicabo illum alias blanditiis error consequatur deserunt odit. Accusamus laboriosam quasi laborum, iusto cum nam error, labore sapiente molestias fugiat.
+        .imagen-evento
+            div
+                img(src='/images/autismo.jpg', alt='')
+        .otras-imagenes
+            div
+                img(src='/images/11.png', alt='')
+            div
+                img(src='/images/terapia.jpg', alt='')
+            div
+                img(src='/images/neuro.jpeg', alt='')
+
+block customScripts
+    script(src='/js/evento.js')

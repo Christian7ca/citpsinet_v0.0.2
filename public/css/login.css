@@ -1,0 +1,19 @@
+body {
+    background-color: #EEE;
+}
+
+main {
+    background-color: #F7F7F7;
+    width: 100%;
+    margin-top: -5px!important;
+    height: 100vh;
+}
+
+#panel-signin {
+    margin-top: 10%;
+    position: absolute;
+    z-index: 1000;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 2px;
+}

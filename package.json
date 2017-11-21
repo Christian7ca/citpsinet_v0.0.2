@@ -1,0 +1,31 @@
+{
+  "name": "citpsinet_v0.0.2",
+  "version": "0.0.2",
+  "description": "citpsinet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Martinez",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "connect-mongo": "^2.0.0",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.3.0",
+    "express-session": "^1.15.6",
+    "moment": "^2.19.2",
+    "mongoose": "^4.13.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "izimodal": "^1.5.1",
+    "izitoast": "^1.1.5",
+    "photoswipe": "^4.1.2",
+    "semantic-ui": "^2.2.13"
+  }
+}

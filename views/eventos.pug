@@ -1,0 +1,43 @@
+extends template-site
+
+block estilos
+    link(rel='stylesheet', href='/css/eventos.css')
+
+block contenido
+
+    section.wrapper.eventos
+        .descripcion-eventos
+            h1.ui.header.blue.raleway.light Eventos
+            h4.ui.justified.header.light
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat veritatis tenetur dolores laudantium sint incidunt voluptatibus optio vero pariatur! Officia, voluptas doloremque aliquid illo tempora. Blanditiis fugiat libero nulla optio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, perspiciatis, reiciendis. Neque eos nemo recusandae minima, sint, doloremque magnam inventore omnis illum id at voluptates architecto optio. Molestias, error saepe!
+        .imagen-eventos
+    
+    h2.ui.header.pink.light.center.aligned Catalogo Eventos
+    
+    section.catalogos-eventos.wrapper
+        .ui.special.cards
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver Evento
+                    img(src='/images/11.png')
+                .content
+                    a.ui.header.blue Nombre del Evento
+                    .meta
+                        span.date Create in Sep 2014
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver Evento
+                    img(src='/images/autismo.jpg')
+                .content
+                    a.ui.header.blue Nombre del Evento
+                    .meta
+                        span.date Create in Sep 2014
+
+block customScripts
+    script(src='/js/eventos.js')

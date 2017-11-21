@@ -1,0 +1,234 @@
+doctype html
+html(lang='es')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        title #{titlePage} 
+        link(rel='stylesheet', href='/dist/semantic.min.css')
+        link(rel='stylesheet', href='/css/dashboard/dashboard.css')
+        link(rel='stylesheet', href='/css/hamburgers.css')
+        block estilos
+            link
+        link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    body
+
+        div.ui.left.vertical.menu.sidebar
+            div#particles-js-mobile(class='item foto-perfil')
+                img.ui.tiny.image(src='/images/man.png')
+                h4.raleway.subtitles #{primerNombre} #{apellidoPaterno}
+            div.ui.accordion.item
+                div.title.raleway
+                    | Administrar Stio Web
+                    i.dropdown.icon
+                div.content
+                    a.item(href='/dashboard/gestionar_eventos')
+                        | Gestionar Eventos
+                        i.add.to.calendar.icon
+                    a.item(href='/dashboard/gestionar_convocatorias')
+                        | Gestionar Convocatorias
+                        i.file.text.icon
+                    a.item(href='/dashboard/gestionar_avisos')
+                        | Gestionar Avisos
+                        i.file.image.outline.icon
+            div.ui.accordion.item
+                div.title.raleway
+                    | Administrar Clínica
+                    i.dropdown.icon
+                div.content
+                    a.item 
+                        | Gestionar Pacientes
+                        i.users.icon
+                    a.item 
+                        | Gestionar Terapeuras
+                        i.doctor.icon
+                    a.item 
+                        | Gestionar Servicios
+                        i.heartbeat.icon
+            a.item.raleway
+                i.browser.icon
+                | Gestionar Eventos
+        div.pusher
+            .ui.left.fixed.vertical.menu
+                div#particles-js-desktop(class='item foto-perfil')
+                    img.ui.tiny.image(src='/images/avatars/man.png')
+                    h4.raleway.subtitles #{primerNombre} #{apellidoPaterno}
+                div.ui.accordion.item
+                    div.title.raleway
+                        | Administrar Stio Web
+                        i.dropdown.icon
+                    div.content
+                        a.item(href='/dashboard/gestionar_eventos')
+                            | Gestionar Eventos
+                            i.add.to.calendar.icon
+                        a.item(href='/dashboard/gestionar_convocatorias')
+                            | Gestionar Convocatorias
+                            i.file.text.icon
+                        a.item(href='/dashboard/gestionar_avisos')
+                            | Gestionar Avisos
+                            i.file.image.outline.icon
+                div.ui.accordion.item
+                    div.title.raleway
+                        | Administrar Clínica
+                        i.dropdown.icon
+                    div.content
+                        a.item 
+                            | Gestionar Pacientes
+                            i.users.icon
+                        a.item 
+                            | Gestionar Terapeuras
+                            i.doctor.icon
+                        a.item 
+                            | Gestionar Servicios
+                            i.heartbeat.icon
+                a.item.raleway
+                    i.browser.icon
+                    | Gestionar Eventos
+            header
+                .hamburger.hamburger--arrow
+                    .hamburger-box
+                        .hamburger-inner
+                div.logo-citpsinet
+                    img(src='/images/logo-citpsi.png' class='ui mini image' alt="")
+                div.ui.text.menu
+                    div.ui.pointing.dropdown.item.desktop
+                        i.icon.mail
+                        |  Mensajes 
+                        .floating.ui.red.label 22
+                        .menu
+                            .header Mensajes
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Nuevo Mensaje
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Nuevo Mensaje
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Nuevo Mensaje
+                            div.divider
+                            a.item(href="#") Ver todos los mensajes...
+                    div.ui.pointing.dropdown.item.desktop
+                        i.icon.alarm
+                        |  Notificaciones  
+                        if notificaciones > 0
+                            .floating.ui.red.label #{notificaciones}                        
+                        .menu
+                            .header Notificaciones
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Tipo de notificación
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Tipo de notificación
+                            div.ui.feed.item
+                                div.event 
+                                    div.label 
+                                        img(src='/images/avatars/man.png' class='ui tiny image')
+                                    div.content
+                                        div.date 1 hour ago
+                                        div.summary Tipo de notificación
+                            div.divider
+                            a.item(href='/dashboard/notificaciones') Ver todas las notificaciones...
+                    div.ui.pointing.dropdown.item
+                        img.ui.avatar.image(src='/images/avatars/man.png')
+                        | #{primerNombre} #{apellidoPaterno}
+                        i.dropdown.icon
+                        .menu
+                            .header Opciones
+                            a.item.mobile
+                                i.icon.mail
+                                |  Mensajes 
+                                .floating.ui.red.label 22
+                            a(href='/dashboard/notificaciones').item.mobile
+                                i.icon.alarm
+                                |  Notificaciones 
+                                if notificaciones > 0
+                                    .floating.ui.red.label #{notificaciones}  
+                            a.item.editar-perfil
+                                i.id.card.icon 
+                                | Editar Peril
+                            a.item(href='/dashboard/logout')
+                                i.sign.out.icon
+                                | Cerrar Sesión    
+            main
+                block content
+                    h2.bienvenida-dashboard.ui.icon.header.center.aligned.grey
+                        i.settings.icon
+                        div.content ¡Bienvenido a su panel de control!
+                            div.sub.header Gestione aspectos relevantes a su Jefaura 
+        
+        .ui.longer.modal#editar-perfil
+            .header
+                div
+                    img(src='/images/man.png' class='ui tiny image')
+                div
+                    h1.ui.header.raleway Nombre Completo
+                        .sub.header.lato Cargo que ostenta
+            .scrolling.content
+                form.ui.form(action='#' method='post')
+                    div.field
+                        .ui.toggle.checkbox
+                            input.hidden(type='checkbox', tabindex='0')
+                            label  Editar Información
+                    div.two.fields
+                        div.field
+                            label Primer Nombre
+                            input(type='text' name='nombre' placeholder='Nombre...')
+                        div.field
+                            label Segundo Nombre
+                            input(type='text' name='nombre' placeholder='Opcional...')
+                    div.two.fields
+                        div.field
+                            label Apellido Paterno
+                            input(type='text' name='paellido_paterno' placeholder='Apellido Paterno...')
+                        div.field
+                            label Apellido Materno
+                            input(type='text' name='apellido_materno' placeholder='Apellido Materno...')
+                    div.three.fields
+                        div.field
+                            label Fecha de Nacimiento
+                            input(type='date' name='fecha_nacimiento')
+                        div.field
+                            label Sexo
+                            select.ui.search.dropdown(name='sexo')
+                                option(value='Hombre') Hombre
+                                option(value='Mujer') Mujer
+                        div.field 
+                            label Nacionalidad
+                            input(type='text' name='nacionalidad' placeholder='Mexicana...')
+            .actions
+                .ui.approve.button Approve
+                .ui.cancel.button Cancel
+
+        
+        
+        script(type='text/javascript', src='https://code.jquery.com/jquery-3.2.1.min.js')
+        script(src='/dist/semantic.min.js')        
+        script(src='/js/dashboard/scripts.js')
+        script(src='/js/particles.js')
+        script(src='/js/jquery.multifile.js')
+        block scripts
+            script
+        
+        
+        

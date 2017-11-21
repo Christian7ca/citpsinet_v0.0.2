@@ -1,0 +1,49 @@
+.eventos {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.descripcion-eventos {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.imagen-eventos {
+    width: 60%;
+    background-image: url('../images/auditorio.jpeg');
+    background-size: cover;
+}
+
+.descripcion-eventos h1 {
+    padding-left: 20px !important;
+    border-left: 5px solid #ee6e73 !important;
+}
+
+.catalogos-eventos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.catalogos-eventos .ui.special.cards .card {
+    height: 280px!important;
+    width: auto;
+}
+
+.catalogos-eventos .ui.special.cards .card .blurring.dimmable.image img {
+    width: auto;
+    height: 200px;
+}
+
+.catalogos-eventos .ui.cards > .card > .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}

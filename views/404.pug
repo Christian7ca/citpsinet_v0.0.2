@@ -1,0 +1,16 @@
+extends template-site
+block estilos
+    link(rel='stylesheet', href='/css/404.css')
+
+block contenido
+
+    div.page-not-found
+        div.icon-message 
+            i.material-icons.grey-text.centered warning
+        div.page-message
+            h2.ligth.grey-text Error 404, página no encontrada...
+            h5.thin.lato.grey-text Es posible que la página que busque ya no exista o el enlace no sea el correcto. Disculpe las molestias que esto puede causar. 
+
+
+block customScripts
+    script(src='/js/inicio.js')

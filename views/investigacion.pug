@@ -1,0 +1,228 @@
+extends template-site
+
+block estilos
+     link(rel='stylesheet', href='/css/investigacion.css')
+
+
+block contenido
+
+    section.wrapper.lineas-investigacion
+        h1.ui.center.aligned.header.grey.raleway Lineas y Programas de Investigacion
+        .ui.special.cards.contenedor-lineas-investigacion
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver mas informacion
+                    img(src='/images/education.jpeg')
+                .content
+                    .header.roboto.center.aligned Desarrollo Psicológico y Procesos Educativos
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver mas informacion
+                    img(src='/images/comunitary.jpg')
+                .content
+                    .header.roboto.center.aligned Psicología Comunitaria y Ambiental
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver mas informacion
+                    img(src='/images/emotions.jpg')
+                .content
+                    .header.roboto.center.aligned Calidad de Vida
+            .card
+                .blurring.dimmable.image
+                    .ui.dimmer
+                        .content
+                            .center
+                                .ui.inverted.button Ver mas informacion
+                    img(src='/images/cognition.jpg')
+                .content
+                    .header.roboto.center.aligned Congnición y Afectos
+    
+    section.wrapper.catalogo-investigadores
+        h2.ui.header.grey.centered.aligned.raleway Catálogo de Investigadores
+        .ui.horizontal.divider.wrapper.light.raleway Congnicion y afectos
+        .ui.cards.contenedor-catalogo
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Bernarda Téllez Alanís 
+                    .meta
+                        a.ui.blue(href='mailto:btellez@uaem.mx') btellez@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Análisis neurofisiológico, neuropsicológico de la memoria y las funciones ejecutivas.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Bernarda_Tellez-Alanis2', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Guillermo Delahanty Matuk 
+                    .meta
+                        a.ui.blue(href='mailto:delahanty@uaem.mx') delahanty@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | El Proceso cognoscitivo de la esquizofrenia y el proceso afectivo de pacientes de neuropsicología. Salud mental.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Guillermo_Delahanty-Matuk', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Víctor M. Patiño Torrealva 
+                    .meta
+                        a.ui.blue(href='mailto:vmpat@uaem.mx') vmpat@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Rehabilitación neuropsicológica de personas con daño cerebral; Neuropsicología del lenguaje y cognición.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Victor_Patino_Torrealva', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Doris Castellanos Simons 
+                    .meta
+                        a.ui.blue(href='mailto:dcastellanos@uaem.mx') dcastellanos@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Desarrollo psicológico de niños y jóvenes con altas capacidades; Formación de docentes.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Doris_Castellanos_Simons', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Aldo Bazán Ramirez 
+                    .meta
+                        a.ui.blue(href='mailto:abazan@uaem.mx') abazan@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Apoyo familiar y rendimiento académico; Planeación y enseñanza funcional.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Aldo_Bazan_Ramirez', target='_blank') Ver Perfil en ResearchGate
+        .ui.horizontal.divider.wrapper.light.raleway Calidad de vida
+        .ui.cards.contenedor-catalogo
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Fernando Arias Galicia 
+                    .meta
+                        a.ui.blue(href='mailto:fernando.arias@uaem.mx') fernando.arias@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Calidad de vida, comportamiento humano y efectividad organizacional
+                .extra.content
+                    a.ui.basic.button(href='http://www.researchgate.net/profile/Fernando_Arias-Galicia', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Arturo Juárez García 
+                    .meta
+                        a.ui.blue(href='mailto:arturojuarezg@hotmail.com') arturojuarezg@hotmail.com
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Factores psicosociales de la salud en el trabajo. Psicofisiología y enfermedades crónicas.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Arturo_Juarez_Garcia', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Imke Hindrichs 
+                    .meta
+                        a.ui.blue(href='mailto:imke.hindrichs@uaem.mx') imke.hindrichs@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Calidad de vida. Comportamiento y procesos organizacionales. Salud ocupacional.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Imke_Hindrichs', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Norma Betanzos 
+                    .meta
+                        a.ui.blue(href='mailto:normisbetanzos@yahoo.com.mx') normisbetanzos@yahoo.com.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Compromiso organizacional; Impacto para los empleados de los nuevos escenarios laborales.
+                .extra.content
+                    a.ui.basic.button(href='http://www.researchgate.net/profile/Norma_Betanzos', target='_blank') Ver Perfil en ResearchGate
+        .ui.horizontal.divider.wrapper.light.raleway Psicologia comunitaria y ambiental
+        .ui.cards.contenedor-catalogo
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Esperanza López Vázquez 
+                    .meta
+                        a.ui.blue(href='mailto:esperanzal@uaem.mx') esperanzal@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Percepción de riesgos de poblaciones expuestas a peligros naturales (Sismos, volcanes e inundaciones).
+                .extra.content
+                    a.ui.basic.button(href='http://www.researchgate.net/profile/Esperanza_Lopez-Vazquez', target='_blank') Ver Perfil en ResearchGate
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dra. Maria Elena Ávila Guerrero 
+                    .meta
+                        a.ui.blue(href='mailto:meavila@uaem.mx') meavila@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Predictores psicosociales del bienestar personal, familiar y colectivo en comunidades marginadas.
+                .extra.content
+                    // <a class="ui basic button" href="http://www.researchgate.net/profile/Fernando_Arias-Galicia" target="_blank">Ver Perfil en ResearchGate</a>
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Jesús Alejandro Vera Jiménez 
+                    .meta
+                        a.ui.blue(href='mailto:javera@uaem.mx') javera@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Evaluación del Bienestar y de estrategias de Intervención.
+                .extra.content
+                    // <a class="ui basic button" href="https://www.researchgate.net/profile/Arturo_Juarez_Garcia" target="_blank">Ver Perfil en ResearchGate</a>
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Gabriel Dorantes Argandar 
+                    .meta
+                        a.ui.blue(href='mailto:gdorantesa@uaem.mx') gdorantesa@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Percepción de Riesgos Tecnológicos y Ambientales; Tráfico y Seguridad Vial.
+                .extra.content
+                    a.ui.basic.button(href='http://www.researchgate.net/profile/Gabriel_Dorantes_Argandar', target='_blank') Ver Perfil en ResearchGate
+        .ui.horizontal.divider.divisor.light PITC´s del CITPsi colaborando en otro CA
+        .ui.cards.contenedor-catalogo
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Ulises Sánchez Delgado 
+                    .meta
+                        a.ui.blue(href='mailto:ulises.delgado@uaem.mx') ulises.delgado@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Análisis funcional de estilos y competencias interactivas y del desarrollo lingüístico.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Ulises_Delgado_Sanchez2', target='_blank') Ver Perfil en ResearchGate
+        .ui.horizontal.divider.divisor.light PITC´s del CITPsi no se encuentran en ningún CA
+        .ui.cards.contenedor-catalogo
+            .card
+                .content
+                    img.right.floated.tiny.ui.image(src='public/images/logo-citpsi.png')
+                    .header  Dr. Eliseo Guajardo Ramos 
+                    .meta
+                        a.ui.blue(href='mailto:eliseo@uaem.mx') eliseo@uaem.mx
+                    .description
+                        strong Líneas de investigación Individual: 
+                        | Educación inclusiva, Desarrollo del niño, Educación Especial, Aprendizaje.
+                .extra.content
+                    a.ui.basic.button(href='https://www.researchgate.net/profile/Eliseo_Guajardo', target='_blank') Ver Perfil en ResearchGate
+
+block customScripts
+    script(src='/js/investigacion.js')
